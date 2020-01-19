@@ -6,7 +6,8 @@ Currently a work in progress..
 ## Features to be added
 - [x] Add new Expense to the app
 - [x] Delete existing expense
-- [ ] Ability to change currency
+- [x] Currency List Page (Collection View)
+- [ ] Ability to change currency via Collection View
 - [ ] Choose payment interval (eg. Monthly, Yearly)
 - [ ] Showing total Expense per month
 - [ ] Choose total Expense interval
