@@ -35,7 +35,7 @@ class CurrencyController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CurrencySignCell
     
-        cell.backgroundColor = .white
+        
         cell.currencySignImage.image = UIImage(systemName: "\(currencyArray[indexPath.row])sign.square.fill")
         return cell
     }
