@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		754111FB23D41EE2007C16DA /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754111FA23D41EE2007C16DA /* CurrencyController.swift */; };
+		754111FD23D43CC1007C16DA /* CurrencySignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754111FC23D43CC1007C16DA /* CurrencySignCell.swift */; };
 		758B4CAD23CACF9100D557BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B4CAC23CACF9100D557BB /* AppDelegate.swift */; };
 		758B4CAF23CACF9100D557BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B4CAE23CACF9100D557BB /* SceneDelegate.swift */; };
 		758B4CB123CACF9100D557BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B4CB023CACF9100D557BB /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		754111FA23D41EE2007C16DA /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
+		754111FC23D43CC1007C16DA /* CurrencySignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySignCell.swift; sourceTree = "<group>"; };
 		758B4CA923CACF9100D557BB /* Expensy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		758B4CAC23CACF9100D557BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		758B4CAE23CACF9100D557BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			children = (
 				758B4CB023CACF9100D557BB /* ViewController.swift */,
 				758B4CE723CB5C5200D557BB /* AddingController.swift */,
+				754111FA23D41EE2007C16DA /* CurrencyController.swift */,
+				754111FC23D43CC1007C16DA /* CurrencySignCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,7 +297,9 @@
 			files = (
 				758B4CB123CACF9100D557BB /* ViewController.swift in Sources */,
 				758B4CAD23CACF9100D557BB /* AppDelegate.swift in Sources */,
+				754111FB23D41EE2007C16DA /* CurrencyController.swift in Sources */,
 				758B4CE823CB5C5200D557BB /* AddingController.swift in Sources */,
+				754111FD23D43CC1007C16DA /* CurrencySignCell.swift in Sources */,
 				758B4CAF23CACF9100D557BB /* SceneDelegate.swift in Sources */,
 				758B4CDE23CADBFF00D557BB /* Model.xcdatamodeld in Sources */,
 			);

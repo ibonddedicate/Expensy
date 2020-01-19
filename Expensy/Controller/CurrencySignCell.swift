@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CurrencyCell: UICollectionViewCell {
+class CurrencySignCell: UICollectionViewCell {
     
-    @IBOutlet weak var currencySign: UIImageView!
+    @IBOutlet weak var currencySignImage: UIImageView!
     
 }
