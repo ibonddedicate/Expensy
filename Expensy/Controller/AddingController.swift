@@ -25,6 +25,7 @@ class AddingController : UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         doneButton.layer.cornerRadius = 27.0
         expenseTitle.delegate = self
+        costTitle.placeholder = "The cost.. (eg. 15 \(pickedCurrency ?? " $"))"
     }
     
     @IBAction func doneButton(_ sender: UIButton) {

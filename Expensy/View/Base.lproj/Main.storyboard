@@ -90,31 +90,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sht-tq-OdM">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CurrencyCell" id="sJd-2i-hYl" customClass="CurrencySignCell" customModule="Expensy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vmf-eQ-iji">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fCG-YL-QXK">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="StW-hc-EiO">
-                                            <rect key="frame" x="0.0" y="1.6666666666666643" width="50" height="47"/>
+                                            <rect key="frame" x="0.0" y="1.6666666666666643" width="100" height="97"/>
                                             <color key="tintColor" red="0.57221087719999997" green="0.76084628809999999" blue="0.447078582" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="StW-hc-EiO" secondAttribute="bottom" id="3g5-2F-7En"/>
                                         <constraint firstAttribute="trailing" secondItem="StW-hc-EiO" secondAttribute="trailing" id="BrQ-KI-NAS"/>
-                                        <constraint firstItem="StW-hc-EiO" firstAttribute="top" secondItem="vmf-eQ-iji" secondAttribute="top" id="UTx-Pw-hUJ"/>
-                                        <constraint firstItem="StW-hc-EiO" firstAttribute="leading" secondItem="vmf-eQ-iji" secondAttribute="leading" id="joD-at-FuA"/>
+                                        <constraint firstItem="StW-hc-EiO" firstAttribute="top" secondItem="fCG-YL-QXK" secondAttribute="top" id="UTx-Pw-hUJ"/>
+                                        <constraint firstItem="StW-hc-EiO" firstAttribute="leading" secondItem="fCG-YL-QXK" secondAttribute="leading" id="joD-at-FuA"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="100" height="100"/>
                                 <connections>
                                     <outlet property="currencySignImage" destination="StW-hc-EiO" id="uvn-fQ-he4"/>
                                 </connections>
@@ -125,7 +126,9 @@
                             <outlet property="delegate" destination="kpA-UA-AlB" id="MH6-rN-Tdb"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Currency" id="ndt-Nl-V3E"/>
+                    <navigationItem key="navigationItem" title="Currency" id="ndt-Nl-V3E">
+                        <barButtonItem key="backBarButtonItem" title=" " id="jcI-bn-7Pa"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSW-GN-TB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,9 +226,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dM4-Oh-kWv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XB5-cl-BpR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="arrow.uturn.left" catalog="system" backIndicatorTransitionMaskImage="arrow.uturn.left" id="XB5-cl-BpR">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="31"/>
@@ -243,6 +247,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.left" catalog="system" width="64" height="56"/>
         <image name="bahtsign.circle" catalog="system" width="64" height="60"/>
         <image name="dollarsign.square.fill" catalog="system" width="64" height="56"/>
     </resources>

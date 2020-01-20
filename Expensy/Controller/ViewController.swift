@@ -14,10 +14,10 @@ class ViewController: UIViewController, AddingDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var currencyPicked = " ฿"
     var expenseArray = [Item]()
     var editStatus = false
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -74,7 +74,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell", for: indexPath)
         cell.textLabel?.text = expenseArray[indexPath.row].expenseTitle
-        cell.detailTextLabel?.text = String(expenseArray[indexPath.row].cash) + currencyPicked
+        cell.detailTextLabel?.text = String(expenseArray[indexPath.row].cash) + (pickedCurrency ?? " $")
         return cell
     }
     
@@ -92,5 +92,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        pickedCurrency = defaults.string(forKey: "Currency")
     }
 }
