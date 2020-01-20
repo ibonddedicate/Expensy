@@ -7,10 +7,10 @@ Currently a work in progress..
 - [x] Add new Expense to the app
 - [x] Delete existing expense
 - [x] Currency List Page (Collection View)
-- [ ] Ability to change currency via Collection View
-- [ ] Choose payment interval (eg. Monthly, Yearly)
+- [x] Ability to change currency via Collection View
 - [ ] Showing total Expense per month
-- [ ] Choose total Expense interval
+- [ ] Choose payment interval (eg. Monthly, Yearly)
+- [ ] Show total Expense per interval chosen
 
 
 
