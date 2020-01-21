@@ -196,16 +196,86 @@
                                     <action selector="doneButton:" destination="4H0-tH-P02" eventType="touchUpInside" id="jBN-Ou-wbV"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NQD-Lp-OJX">
+                                <rect key="frame" x="20" y="281" width="335" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2n-Gi-kaJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="45"/>
+                                        <color key="backgroundColor" red="0.61704885269999998" green="0.82199793789999998" blue="0.4428914095" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Daily">
+                                            <color key="titleColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chosenInterval:" destination="4H0-tH-P02" eventType="touchUpInside" id="2PP-3r-lbi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jW8-79-bDx">
+                                        <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="45"/>
+                                        <color key="backgroundColor" red="0.61704885269999998" green="0.82199793789999998" blue="0.4428914095" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Weekly">
+                                            <color key="titleColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chosenInterval:" destination="4H0-tH-P02" eventType="touchUpInside" id="Rkm-13-6kv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jW8-79-bDx" firstAttribute="width" secondItem="v2n-Gi-kaJ" secondAttribute="width" id="1Qx-Px-jfy"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="whB-zv-cHV">
+                                <rect key="frame" x="20" y="360" width="335" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-5U-8lh">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="45"/>
+                                        <color key="backgroundColor" red="0.61704885269999998" green="0.82199793789999998" blue="0.4428914095" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Monthly">
+                                            <color key="titleColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chosenInterval:" destination="4H0-tH-P02" eventType="touchUpInside" id="MmZ-Oq-LIN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faw-MR-3mk">
+                                        <rect key="frame" x="177.66666666666663" y="0.0" width="157.33333333333337" height="45"/>
+                                        <color key="backgroundColor" red="0.61704885269999998" green="0.82199793789999998" blue="0.4428914095" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Yearly">
+                                            <color key="titleColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chosenInterval:" destination="4H0-tH-P02" eventType="touchUpInside" id="gxF-K4-cEx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="faw-MR-3mk" firstAttribute="width" secondItem="jX9-5U-8lh" secondAttribute="width" id="l6M-vJ-Uwd"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.49398017379999998" green="0.65408867390000003" blue="0.34841676290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Zgd-JS-xfb" firstAttribute="trailing" secondItem="tF0-O0-oV0" secondAttribute="trailing" constant="10" id="1Lu-WX-Ksv"/>
                             <constraint firstItem="tF0-O0-oV0" firstAttribute="leading" secondItem="Zgd-JS-xfb" secondAttribute="leading" constant="10" id="7Jj-5C-ANp"/>
                             <constraint firstItem="tF0-O0-oV0" firstAttribute="top" secondItem="sFX-4y-fJb" secondAttribute="bottom" constant="44" id="G1L-JQ-gCT"/>
+                            <constraint firstItem="Zgd-JS-xfb" firstAttribute="trailing" secondItem="NQD-Lp-OJX" secondAttribute="trailing" constant="20" id="LMg-Au-ru7"/>
                             <constraint firstItem="sFX-4y-fJb" firstAttribute="centerX" secondItem="hUf-Xw-0He" secondAttribute="centerX" id="LXE-yE-mcR"/>
                             <constraint firstItem="Zgd-JS-xfb" firstAttribute="trailing" secondItem="PqA-ep-Wvl" secondAttribute="trailing" constant="10" id="Lhi-Tn-6sm"/>
+                            <constraint firstItem="NQD-Lp-OJX" firstAttribute="leading" secondItem="Zgd-JS-xfb" secondAttribute="leading" constant="20" id="W7l-yB-Ngc"/>
+                            <constraint firstItem="whB-zv-cHV" firstAttribute="top" secondItem="NQD-Lp-OJX" secondAttribute="bottom" constant="34" id="YB7-s3-btp"/>
                             <constraint firstItem="sFX-4y-fJb" firstAttribute="top" secondItem="Zgd-JS-xfb" secondAttribute="top" constant="33" id="c5j-pq-i5L"/>
+                            <constraint firstItem="whB-zv-cHV" firstAttribute="leading" secondItem="Zgd-JS-xfb" secondAttribute="leading" constant="20" id="e5y-Fg-JME"/>
                             <constraint firstItem="Zgd-JS-xfb" firstAttribute="bottom" secondItem="PqA-ep-Wvl" secondAttribute="bottom" constant="20" id="lr2-m8-mGb"/>
+                            <constraint firstItem="NQD-Lp-OJX" firstAttribute="top" secondItem="tF0-O0-oV0" secondAttribute="bottom" constant="34" id="nGT-Se-MM7"/>
+                            <constraint firstItem="Zgd-JS-xfb" firstAttribute="trailing" secondItem="whB-zv-cHV" secondAttribute="trailing" constant="20" id="rsd-wa-clx"/>
                             <constraint firstItem="tF0-O0-oV0" firstAttribute="centerX" secondItem="hUf-Xw-0He" secondAttribute="centerX" id="svq-ey-RYz"/>
                             <constraint firstItem="PqA-ep-Wvl" firstAttribute="leading" secondItem="Zgd-JS-xfb" secondAttribute="leading" constant="10" id="zHR-mk-rDZ"/>
                         </constraints>
@@ -213,13 +283,17 @@
                     </view>
                     <connections>
                         <outlet property="costTitle" destination="nEQ-s7-NYU" id="bxg-hh-l9P"/>
+                        <outlet property="dailyButton" destination="v2n-Gi-kaJ" id="u0y-Sb-kN6"/>
                         <outlet property="doneButton" destination="PqA-ep-Wvl" id="VCE-ou-uhc"/>
                         <outlet property="expenseTitle" destination="28b-lU-aHO" id="9ff-Zr-Zn3"/>
+                        <outlet property="monthlyButton" destination="jX9-5U-8lh" id="3lm-xw-HGa"/>
+                        <outlet property="weeklyButton" destination="jW8-79-bDx" id="P5m-uH-Eq0"/>
+                        <outlet property="yearlyButton" destination="faw-MR-3mk" id="FaR-ot-vUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBx-2Q-OKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="530"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="529.80295566502468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JM3-X6-ZWB">

@@ -20,10 +20,18 @@ class AddingController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var expenseTitle: UITextField!
     @IBOutlet weak var costTitle: UITextField!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var dailyButton: UIButton!
+    @IBOutlet weak var weeklyButton: UIButton!
+    @IBOutlet weak var monthlyButton: UIButton!
+    @IBOutlet weak var yearlyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneButton.layer.cornerRadius = 27.0
+        doneButton.layer.cornerRadius = doneButton.frame.size.height/2
+        dailyButton.layer.cornerRadius = dailyButton.frame.size.height/2
+        weeklyButton.layer.cornerRadius = weeklyButton.frame.size.height/2
+        monthlyButton.layer.cornerRadius = monthlyButton.frame.size.height/2
+        yearlyButton.layer.cornerRadius = yearlyButton.frame.size.height/2
         expenseTitle.delegate = self
         costTitle.placeholder = "The cost.. (eg. 15 \(pickedCurrency ?? " $"))"
     }
@@ -39,12 +47,20 @@ class AddingController : UIViewController, UITextFieldDelegate {
         }
         dismiss(animated: true, completion: nil)
     }
-
+    
+    
+    @IBAction func chosenInterval(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
+    
+    
+    
+//- dismissing keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
            self.view.endEditing(true)
        }
