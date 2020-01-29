@@ -16,6 +16,8 @@ protocol AddingDelegate {
 class AddingController : UIViewController, UITextFieldDelegate {
     
     var delegate: AddingDelegate?
+    let chooseInterval = [1:365,2:52,3:12,4:1]
+    var costInterval = 0
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var expenseTitle: UITextField!
     @IBOutlet weak var costTitle: UITextField!
@@ -41,7 +43,10 @@ class AddingController : UIViewController, UITextFieldDelegate {
             let newItem = Item(context: context)
             newItem.expenseTitle = expenseTitle.text
             newItem.cash  = Double(costTitle.text!)!
+            newItem.interval = Double(costInterval)
+            
             delegate?.addingData(data: newItem)
+            
         } else {
             print("Textbox empty")
         }
@@ -50,7 +55,9 @@ class AddingController : UIViewController, UITextFieldDelegate {
     
     
     @IBAction func chosenInterval(_ sender: UIButton) {
-        print(sender.tag)
+        sender.isSelected = !sender.isSelected
+        costInterval = chooseInterval[sender.tag] ?? 0
+        sender.backgroundColor = .white
     }
     
     
