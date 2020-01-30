@@ -18,6 +18,7 @@ class AddingController : UIViewController, UITextFieldDelegate {
     var delegate: AddingDelegate?
     let chooseInterval = [1:365,2:52,3:12,4:1]
     var costInterval = 0
+    let accentColor = UIColor(red: 132/255.0, green: 196/255.0, blue: 103/255.0, alpha: 1)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var expenseTitle: UITextField!
     @IBOutlet weak var costTitle: UITextField!
@@ -39,37 +40,60 @@ class AddingController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneButton(_ sender: UIButton) {
-        if expenseTitle.text != "" && costTitle.text != ""{
+        if expenseTitle.text != "" && costTitle.text != "" && costInterval != 0{
             let newItem = Item(context: context)
             newItem.expenseTitle = expenseTitle.text
             newItem.cash  = Double(costTitle.text!)!
             newItem.interval = Double(costInterval)
             
             delegate?.addingData(data: newItem)
-            
+            dismiss(animated: true, completion: nil)
         } else {
             print("Textbox empty")
         }
-        dismiss(animated: true, completion: nil)
     }
     
+    func deselectButtons(){
+        let intervalButtons = [dailyButton, weeklyButton, monthlyButton, yearlyButton]
+        intervalButtons.forEach {
+            $0?.backgroundColor = accentColor
+            $0?.isSelected = false }
+    }
     
     @IBAction func chosenInterval(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        costInterval = chooseInterval[sender.tag] ?? 0
-        sender.backgroundColor = .white
+        self.view.endEditing(true)
+        deselectButtons()
+        sender.isSelected = true
+        if sender.isSelected == true {
+            sender.backgroundColor = .white
+            costInterval = chooseInterval[sender.tag] ?? 0
+            print(costInterval)
+        } else {
+            sender.backgroundColor = accentColor
+            costInterval = 0
+        }
+        
+        doneButtonTurnsBright()
     }
     
-    
+    func doneButtonTurnsBright() {
+        if expenseTitle.text != "" && costTitle.text != "" && costInterval != 0 {
+            doneButton.backgroundColor = .white
+        } else {
+            doneButton.backgroundColor = accentColor
+        }
+    }
     
     
 //- dismissing keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        doneButtonTurnsBright()
         return true
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
            self.view.endEditing(true)
+        doneButtonTurnsBright()
        }
 
 }
