@@ -4,13 +4,13 @@ A Simple iOS App that could track your expenses.
 
 Currently a work in progress..
 ## Features to be added
-- [x] Add new Expense to the app
-- [x] Delete existing expense
-- [x] Currency List Page (Collection View)
-- [x] Ability to change currency via Collection View
-- [ ] Showing total Expense per month
-- [ ] Choose payment interval (eg. Monthly, Yearly)
-- [ ] Show total Expense per interval chosen
+- [x] Add new expense to the app
+- [x] Delete existing expense by swiping left
+- [x] Currency List Page (using Collection View)
+- [x] Ability to change currency via Collection View (And selection will be saved within device)
+- [x] While adding new expense user will be able to select an expense interval (Weekly, Monthly, etc.)
+- [x] Data stored in CoreData which includes expense title, cost of that expense and billing interval.
+- [ ] Show total Expense per interval chosen (Interactive card on main VC)
 
 
 
