@@ -16,7 +16,7 @@ protocol AddingDelegate {
 class AddingController : UIViewController, UITextFieldDelegate {
     
     var delegate: AddingDelegate?
-    let chooseInterval = [1:365,2:52,3:12,4:1]
+    let chooseInterval = [1:1,2:7,3:30,4:365]
     var costInterval = 0
     let accentColor = UIColor(red: 132/255.0, green: 196/255.0, blue: 103/255.0, alpha: 1)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -45,9 +45,11 @@ class AddingController : UIViewController, UITextFieldDelegate {
             newItem.expenseTitle = expenseTitle.text
             newItem.cash  = Double(costTitle.text!)!
             newItem.interval = Double(costInterval)
+            newItem.perday = Double(costTitle.text!)! / Double(costInterval)
             
             delegate?.addingData(data: newItem)
             dismiss(animated: true, completion: nil)
+            print(newItem.perday)
         } else {
             print("Textbox empty")
         }

@@ -11,13 +11,20 @@ import CoreData
 
 class ViewController: UIViewController, AddingDelegate {
 
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalNumber: UILabel!
+    @IBOutlet weak var dailyButton: UIButton!
+    @IBOutlet weak var weeklyButton: UIButton!
+    @IBOutlet weak var monthlyButton: UIButton!
+    @IBOutlet weak var yearlyButton: UIButton!
     
     var expenseArray = [Item]()
     var editStatus = false
+    let chooseInterval = [1:1,2:7,3:30,4:365]
+    var choosenInterval = 0
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    var totalAmount:Double = 0
+    let accentColor = UIColor(red: 132/255.0, green: 196/255.0, blue: 103/255.0, alpha: 1)
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,12 +32,17 @@ class ViewController: UIViewController, AddingDelegate {
         tableView.dataSource = self
         self.navigationController?.navigationBar.shadowImage = UIImage()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        dailyButton.layer.cornerRadius = dailyButton.frame.size.height/2
+        weeklyButton.layer.cornerRadius = weeklyButton.frame.size.height/2
+        monthlyButton.layer.cornerRadius = monthlyButton.frame.size.height/2
+        yearlyButton.layer.cornerRadius = yearlyButton.frame.size.height/2
         loadItems()
     }
     func addingData(data: Item) {
         expenseArray.append(data)
         saveItems()
         tableView.reloadData()
+        calculateTotal()
     }
     
     @IBAction func editButton(_ sender: UIBarButtonItem) {
@@ -62,6 +74,27 @@ class ViewController: UIViewController, AddingDelegate {
             print ("Error fetching request \(error)")
         }
     }
+    func deselectButtons(){
+        let intervalButtons = [dailyButton, weeklyButton, monthlyButton, yearlyButton]
+        intervalButtons.forEach {
+            $0?.backgroundColor = accentColor
+            $0?.isSelected = false }
+    }
+    
+    @IBAction func chooseInterval(_ sender: UIButton) {
+        self.view.endEditing(true)
+        deselectButtons()
+        sender.isSelected = true
+        if sender.isSelected == true {
+            sender.backgroundColor = .white
+            print(sender.tag)
+            choosenInterval = chooseInterval[sender.tag] ?? 0
+            calculateTotal()
+        } else {
+            sender.backgroundColor = accentColor
+        }
+    }
+    
 }
 
 
@@ -88,6 +121,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             expenseArray.remove(at: indexPath.row)
             saveItems()
             tableView.reloadData()
+            calculateTotal()
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,5 +130,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         pickedCurrency = defaults.string(forKey: "Currency")
+        calculateTotal()
     }
+    func calculateTotal(){
+            totalAmount = 0
+            for cash in expenseArray {
+                let amount = cash.value(forKey: "perday") as! Double
+                totalAmount += amount
+                print(totalAmount)
+                totalNumber.text = String(format:"%.2f",totalAmount*Double(choosenInterval)) + (pickedCurrency ?? " $")
+        }
+    }
+    
 }
