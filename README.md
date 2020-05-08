@@ -10,8 +10,8 @@ Currently a work in progress..
 - [x] Ability to change currency via Collection View (And selection will be saved within device)
 - [x] While adding new expense user will be able to select an expense interval (Weekly, Monthly, etc.)
 - [x] Data stored in CoreData which includes expense title, cost of that expense and billing interval.
-- [x] Show total Expense per interval chosen (Interactive card on main VC)
-- [ ] Design fixes
+- [x] Show total Expense per interval chosen Daily, Monthly, etc.(on main VC under Table View)
+- [ ] Design fixes (Differentiate expense interval of each item, etc.)
 
 
 
