@@ -59,7 +59,7 @@ class ViewController: UIViewController, AddingDelegate {
             expenseArray = try context.fetch(request)
             tableView.reloadData()
         } catch {
-            print ("Error feting request \(error)")
+            print ("Error fetching request \(error)")
         }
     }
 }
