@@ -1,7 +1,7 @@
-![ExpensyAppLogo](https://github.com/ibonddedicate/Expensy/blob/master/Expensy/Assets.xcassets/AppIcon.appiconset/180.png?raw=true)
+![ExpensyLogo](https://www.consolethai.com/img/expensy_logo.jpg)
 # Expensy
-A Simple iOS App that could track your expenses.
-![ExpensySample](https://www.consolethai.com/img/expensy_sample.jpg)
+A Simple iOS App that could calculate how much you'll need to earn to cover your expenses.
+![ExpensySample](https://www.consolethai.com/img/expensy_sample_updated.jpg)
 
 
 Currently a work in progress..
