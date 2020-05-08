@@ -1,6 +1,8 @@
-![ImageLogo](https://github.com/ibonddedicate/Expensy/blob/master/Expensy/Assets.xcassets/AppIcon.appiconset/180.png?raw=true)
+![ExpensyAppLogo](https://github.com/ibonddedicate/Expensy/blob/master/Expensy/Assets.xcassets/AppIcon.appiconset/180.png?raw=true)
 # Expensy
 A Simple iOS App that could track your expenses.
+![ExpensySample](https://www.consolethai.com/img/expensy_sample.jpg)
+
 
 Currently a work in progress..
 ## Features to be added
